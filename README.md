@@ -12,6 +12,7 @@ The app goes into several sections:
 1. Notification display module
 
 Future features:
+
 1. Associate poke sender to car owner identity (if they wish to)
 1. Enable car owner to reply to those who poke them
 1. Social network function (e.g. setup e.g. `Meter community` or `Traffic Ticket avoidance radar`)
@@ -26,7 +27,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
+```bash
 Give examples
 ```
 
@@ -36,13 +37,13 @@ A step by step series of examples that tell you have to get a development env ru
 
 Say what the step will be
 
-```
+```bash
 Give the example
 ```
 
 And repeat
 
-```
+```bash
 until finished
 ```
 
@@ -56,7 +57,7 @@ Explain how to run the automated tests for this system
 
 Explain what these tests test and why
 
-```
+```bash
 Give an example
 ```
 
@@ -64,7 +65,7 @@ Give an example
 
 Explain what these tests test and why
 
-```
+```bash
 Give an example
 ```
 
@@ -101,4 +102,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
-
