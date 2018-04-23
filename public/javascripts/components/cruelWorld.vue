@@ -15,15 +15,15 @@ module.exports = { // This is important, I got errors when using `export default
     mounted () {
         setTimeout(() => {
             console.log('We can use ES6 too!')
-        }, 1000)
+        }, 1000);
     }
 }
 </script>
 
-<style scoped lang="scss"> <!-- add this attribute -->
+<style scoped lang="scss">
 .cruel {
     color: green;
-    span { <!-- nested scss syntax! -->
+    span { 
         color: orange;
     }
 }

@@ -19441,7 +19441,7 @@ exports.insert = function (css) {
 }
 
 },{}],6:[function(require,module,exports){
-var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert(".cruel[data-v-3aa4f107] {\n    color: green;\n}")
+var __vueify_style_dispose__ = require("vueify/lib/insert-css").insert("/* line 24, stdin */\n.cruel[data-v-3aa4f107] {\n  color: green; }\n  /* line 26, stdin */\n  .cruel span[data-v-3aa4f107] {\n    color: yellow; }")
 ;(function(){
 //
 //
@@ -19460,7 +19460,7 @@ module.exports = { // This is important, I got errors when using `export default
     mounted () {
         setTimeout(() => {
             console.log('We can use ES6 too!')
-        }, 1000)
+        }, 1000);
     }
 }
 
