@@ -1,6 +1,6 @@
 <!-- TOC -->
 
-- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car-an-anonymous-car-owner-notification-serivice)
+- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car--an-anonymous-car-owner-notification-serivice)
     - [Getting Started](#getting-started)
         - [Prerequisites](#prerequisites)
         - [Installing](#installing)
@@ -54,7 +54,8 @@ Give examples
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+The project employ progressive framework by vue.js, please refers:
+https://dev.to/hyra/using-vue-components-in-your-express-app-d15 
 
 ```bash
 Give the example

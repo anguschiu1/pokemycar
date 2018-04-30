@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "test": "snyk test && echo \\\\\\\"Error: no test specified\\\\\\\" && exit 1",
+    "dev": "watchify -vd -p browserify-hmr -t vueify -e public/javascripts/main.js -o public/javascripts/bundle.js & node ./bin/www",
     "start": "node ./bin/www"
   },
   "repository": {
@@ -22,6 +23,7 @@
     "snyk": "^1.73.0"
   },
   "dependencies": {
+    "browserify-hmr": "^0.3.6",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^5.0.1",
@@ -29,10 +31,10 @@
     "helmet": "^3.12.0",
     "http-errors": "~1.6.2",
     "morgan": "^1.9.0",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.9.0",
     "pug": "^2.0.3",
     "vue": "^2.5.16",
     "vueify": "^9.4.1",
-    "vuerify": "^0.4.0"
+    "watchify": "^3.11.0"
   }
 }
