@@ -1,8 +1,9 @@
-<!-- TOC -->
 
-- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car-an-anonymous-car-owner-notification-serivice)
+- [pokecar](#pokecar)
+- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car--an-anonymous-car-owner-notification-serivice)
     - [Getting Started](#getting-started)
         - [Prerequisites](#prerequisites)
+    - [Build Setup](#build-setup)
         - [Installing](#installing)
     - [Running the tests](#running-the-tests)
         - [Break down into end to end tests](#break-down-into-end-to-end-tests)
@@ -15,7 +16,6 @@
     - [License](#license)
     - [Acknowledgments](#acknowledgments)
 
-<!-- /TOC -->
 
 # Poke My Car, an anonymous car owner notification serivice
 
@@ -50,11 +50,37 @@ What things you need to install the software and how to install them
 Give examples
 ```
 
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+
+# run unit tests
+npm run unit
+
+# run all tests
+npm test
+```
+
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+
 ### Installing
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
+The project employ progressive framework by vue.js, please refers:
+https://dev.to/hyra/using-vue-components-in-your-express-app-d15 
 
 ```bash
 Give the example
