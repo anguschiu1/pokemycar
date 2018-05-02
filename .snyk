@@ -1,4 +1,80 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.11.0
-ignore: {}
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:braces:20180219':
+    - anymatch > micromatch > braces:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+    - chokidar > anymatch > micromatch > braces:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+    - watchify > chokidar > anymatch > micromatch > braces:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+    - watchify > anymatch > micromatch > braces:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+  'npm:deep-extend:20180409':
+    - chokidar > fsevents > node-pre-gyp > rc > deep-extend:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+    - watchify > chokidar > fsevents > node-pre-gyp > rc > deep-extend:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+  'npm:hoek:20180212':
+    - boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.063Z'
+    - cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-gyp > request > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > node-gyp > request > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > request > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-gyp > request > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > node-gyp > request > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > request > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - hawk > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-gyp > request > hawk > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > node-gyp > request > hawk > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > request > hawk > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-gyp > request > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > node-gyp > request > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.064Z'
+    - node-sass > request > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-31T05:31:21.065Z'
 patch: {}
