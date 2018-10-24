@@ -1,7 +1,8 @@
+# Poke My Car, an anonymous car owner notification serivice
+
 <!-- TOC -->
 
-
-- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car--an-anonymous-car-owner-notification-serivice)
+- [Poke My Car, an anonymous car owner notification serivice](#poke-my-car-an-anonymous-car-owner-notification-serivice)
     - [Getting Started](#getting-started)
         - [Prerequisites](#prerequisites)
         - [Installing](#installing)
@@ -17,8 +18,6 @@
     - [Acknowledgments](#acknowledgments)
 
 <!-- /TOC -->
-
-# Poke My Car, an anonymous car owner notification serivice
 
 Poke My Car is notification service for car owner. By sticking a QR code image on the car windshield, anyone can scan and inform something to the car owner by scanning the QR code on the windshield.
 
