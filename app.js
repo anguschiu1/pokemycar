@@ -8,12 +8,13 @@ var helmet = require('helmet');
 var indexRouter = require('./routes/index'); 
 var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
+var pokeCarRouter = require('./routes/pokecar'); 
 
 var app = express();
 
 // setting environment variables
 if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').load();  
+  require('dotenv').config();  
 }
 console.log('Now the value for NODE_ENV is:', process.env.NODE_ENV);
 
@@ -32,6 +33,7 @@ app.use(helmet());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/login', loginRouter);
+app.use('/pokecar', pokeCarRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
