@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Divao Passwordless Sign-on Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link as="style" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;family=Roboto:wght@300;400;500" rel="preload"/>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&amp;family=Roboto:wght@300;400;500" rel="stylesheet"/>
+        <link href="index.css?t=1603017559104" rel="stylesheet"/>
+        <link crossorigin="anonymous" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css"/>
+    </head>
+    <body>
+        <div class="container-sm min-vh-100 d-flex flex-column justify-content-center flex-grow">
+            <nav class="navbar navbar-light fixed-top">
+                <div>
+                    <span></span>
+                </div>
+                <div>
+                    <button class="btn btn-primary" onclick="divao.sign()">Sign on</button>
+                    <button class="btn btn-danger" style="display:none" onclick="signout()">Sign out</button>
+                </div>
+            </nav>
+            <div class="d-flex flex-column">
+                <h1>Divao Demo</h1>
+                <h3>Passwordless sign-on</h3>
+                <p>
+                    Try Divao passwordless sign-on by clicking on the buttons on the top right. From now until October 31st 2020, we are inviting hackers into hack our system as a test. The first successful hacker will get a reward of 10,000,000 Satoshi (0.1 Bitcoin).
+                </p>
+                <p>
+                    <a class="text-success" href="https://divao.io">More about us</a>
+                </p>
+            </div>
+        </div>
+        <script src="//api.divao.io/auth.js"></script>
+        <script>
+            const divao = new Divao("DIVAO5AMJTplw6FruSSf4d", sign);
+            updateUI();
+            function sign(jwt)
+            {
+                window.localStorage.setItem("session", jwt);
+                updateUI();
+            }
+            function signout()
+            {
+                window.localStorage.removeItem("session");
+                updateUI();
+            }
+            function updateUI()
+            {
+                const jwt = window.localStorage.getItem("session");
+                const span = document.querySelector("span");
+                if(jwt === null)
+                {
+                    span.textContent = "";
+                }
+                else
+                {
+                    const {sub} = Divao.readJWT(jwt);
+                    span.textContent = `Welcome ${sub}`;
+                    divao.close();
+                }
+                document.querySelector("button[class ~= btn-primary]").style.display = jwt === null ? "" : "none";
+                document.querySelector("button[class ~= btn-danger]").style.display = jwt === null ? "none" : "";
+            }
+            window.addEventListener("storage", updateUI);
+        </script>
+        <script crossorigin="anonymous" src="https://www.googletagmanager.com/gtag/js?id=UA-164526313-2"></script>
+        <script>function gtag(){dataLayer.push(arguments);}window.dataLayer=window.dataLayer||[];gtag("js",new Date());gtag("config","UA-164526313-2");</script>
+    </body>
+</html>

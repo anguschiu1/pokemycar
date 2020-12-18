@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passwordless sign-on Sample</title>
+    <link crossorigin="anonymous"
+        integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg=="
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <script async data-api-key="xHm3vEuUVITNWRTsbZpn8l" src="https://api.divao.io/v1/"></script>
+
+    <nav class="navbar navbar-light fixed-top">
+        <div>
+            <span></span>
+        </div>
+        <div>
+            <button class="btn btn-primary" onclick="Divao.sign()">Sign on</button>
+            <button class="btn btn-danger" style="display:none" onclick="signout()">Sign out</button>
+        </div>
+    </nav>
+    <script>
+        const divao = new Divao("xHm3vEuUVITNWRTsbZpn8l", sign);
+        // const divao = new Divao("DIVAO5AMJTplw6FruSSf4d", sign);
+        updateUI();
+        function sign(jwt) {
+            window.localStorage.setItem("session", jwt);
+            updateUI();
+        }
+        function signout() {
+            window.localStorage.removeItem("session");
+            updateUI();
+        }
+        function updateUI() {
+            const jwt = window.localStorage.getItem("session");
+            const span = document.querySelector("span");
+            if (jwt === null) {
+                span.textContent = "";
+            }
+            else {
+                const { sub,nbf,exp } = Divao.readJWT(jwt);
+                span.textContent = `Welcome ${sub}, The token claimed at ${new Date(nbf*1000).toUTCString()} and will expire at ${new Date(exp*1000).toUTCString()}`;
+                divao.close();
+            }
+            document.querySelector("button[class ~= btn-primary]").style.display = jwt === null ? "" : "none";
+            document.querySelector("button[class ~= btn-danger]").style.display = jwt === null ? "none" : "";
+        }
+        window.addEventListener("storage", updateUI);
+    </script>
+
+</body>
+
+</html>
