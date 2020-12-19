@@ -12,45 +12,22 @@
 
 <body>
     <script async data-api-key="xHm3vEuUVITNWRTsbZpn8l" src="https://api.divao.io/v1/"></script>
-
-    <nav class="navbar navbar-light fixed-top">
+    <div class="container-fluid">
         <div>
             <span></span>
         </div>
         <div>
-            <button class="btn btn-primary" onclick="Divao.sign()">Sign on</button>
-            <button class="btn btn-danger" style="display:none" onclick="signout()">Sign out</button>
+            <button class="btn btn-primary" onclick="Divao.sign()" style="display: none;">Sign on</button>
+            <button class="btn btn-danger" style="" onclick="Divao.signout()">Sign out</button>
         </div>
-    </nav>
+    </div>
     <script>
-        const divao = new Divao("xHm3vEuUVITNWRTsbZpn8l", sign);
-        // const divao = new Divao("DIVAO5AMJTplw6FruSSf4d", sign);
-        updateUI();
-        function sign(jwt) {
-            window.localStorage.setItem("session", jwt);
-            updateUI();
-        }
-        function signout() {
-            window.localStorage.removeItem("session");
-            updateUI();
-        }
-        function updateUI() {
-            const jwt = window.localStorage.getItem("session");
-            const span = document.querySelector("span");
-            if (jwt === null) {
-                span.textContent = "";
-            }
-            else {
-                const { sub,nbf,exp } = Divao.readJWT(jwt);
-                span.textContent = `Welcome ${sub}, The token claimed at ${new Date(nbf*1000).toUTCString()} and will expire at ${new Date(exp*1000).toUTCString()}`;
-                divao.close();
-            }
-            document.querySelector("button[class ~= btn-primary]").style.display = jwt === null ? "" : "none";
-            document.querySelector("button[class ~= btn-danger]").style.display = jwt === null ? "none" : "";
-        }
-        window.addEventListener("storage", updateUI);
+        window.addEventListener("DivaoSignOn", () => {
+            document.querySelector("span").textContent = Divao.JWT === null ? "" : `Welcome ${Divao.JWT.payload.sub}`;
+            document.querySelector("button[class ~= btn-primary]").style.display = Divao.JWT === null ? "" : "none";
+            document.querySelector("button[class ~= btn-danger]").style.display = Divao.JWT === null ? "none" : "";
+        });
     </script>
-
 </body>
 
 </html>
